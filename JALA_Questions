@@ -38,7 +38,7 @@
   as retrieving user setting information or saved payment card data.
   
       Example:
- ``` 
+ ```html
     Access-Control-Allow-Headers 
     Access-Control-Max-Age 
     Access-Control-Request-Headers 
