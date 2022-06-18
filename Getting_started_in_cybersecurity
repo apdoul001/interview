@@ -1,0 +1,100 @@
+                                        GETTING STARTED IN CYBERSECURITY
+Cybersecurity has never been more important than it is today. With the rapid shift to remote working due to COVID and the vast expansion of the online space, there is an increasing need for businesses to invest in It security and protect themselves from threats such as cyber hacks, data compromise and identity theft. The first thing you need to tackle when it comes to cybersecurity is the basics of IT systems and networks, for example, the different types of networks available and their protocols. Once you are familiar with the fundamentals you can delve into the basics of networking traffic, security, and communication principles
+
+Even though cybersecurity is versed, we will be focusing on Ethical hacking/penetration testing:
+
+How to get started in penetration testing
+Penetration testers are the so-called “ethical hackers,” or the good guys. Also known as assurance validators, penetration testers are hired by network system owners and web-based application providers to probe for vulnerabilities that hackers with nefarious intent might be able to exploit to gather secure data and intelligence.Ethical hackers perform vulnerability assessments (along with other tasks) by exercising their skills and knowledge — and actually get paid to perform the equivalent of digital break-ins.They simulate actual cyberattacks using a broad range of tools and methods, some of their own creation, leaving no stone unturned to unearth cracks in security protocols for networks, systems, and web-based applications. 
+
++ Six steps to becoming a penetration tester
+
+1. Self-analysis: Penetration testing is not for everyone. It requires exceptional problem-solving skills, a dogged determination, dedication to detail, and a desire to remain continually educated on the latest trends in the field. Successful ethical hackers must possess a high level of each of these qualities in order to excel. So be honest in the self-assessment before deciding whether pen testing is an appropriate career.
+2. Education: At one time, many employers were known to hire real-world hackers, and convert them from the “dark side” to work for the good guys. In recent years, however, college degrees have become near mandatory for penetration testers. Undergraduate degrees in the various disciplines of cybersecurity all provide viable entryways into the field. 
+3. Career path: There are several ways a would-be pen tester can break into the cybersecurity industry. Starting out in security administration, network administration, network engineer, system administrator, or web-based application programming, always focusing on the security side of each discipline, will provide a good foundation for pen testing.
+4. Professional certifications: Employers predominantly want to see a number of professional certifications on the resumes of assurance validators, and this is particularly true with more senior positions. Several organizations now offer widely-recognized certifications for penetration testing occupations.
+5. Honing the craft: Becoming an expert in a chosen field is a good idea in any career, but for penetration testers, there are varied ways of standing out from the crowd. Being active and recognized in cybersecurity disciplines, such as bug bounty programs, collecting open-source intelligence (OSINT), and developing proprietary attack programs, will all get pen testers recognized among peer groups.
+6. Keep current: As with most cybersecurity career paths, it is vital to remain current with what is happening in the industry. Keeping skills and knowledge up-to-date with all of the latest trends in programming and network security, ever-changing hacking techniques and security protocols, popularly exploited vulnerabilities, and anything else happening in the cybersecurity industry.
+
++ What is a penetration tester?
+
+Penetration testers/ethical hackers are the private detectives of the information security universe. As with many PI operations, the task is to uncover threats before any potential invasive operators have a chance to implement their plans. 
+
+One of the basic truths of human nature generally, and digital information systems specifically, is that disreputable actors will always attempt to seize opportunities to take advantage of vulnerabilities. Pen testers seek to investigate, uncover, and aid in the repair of any potential vulnerabilities in wired and wireless network systems and web-based applications. 
+
+The push and pull between the pre-emptive work of ethical hackers and the efforts of real-life hackers is a constant arms race. Each side persistently attempts to advance their knowledge, skills, and techniques beyond the capabilities of the other side. 
+
+Pen testers utilize a strategy of offensive defense. The goal is to provide the best possible information security by offensively attacking computer systems as a real-life hacker would, thus beating the hacker to the punch and assisting in closing the vulnerability. The result will be the safeguarding of information and systems coming under attack.
+
+Penetration tester skills and experience
+
+Employer requirements of new hires in the penetration testing field, as in all cybersecurity disciplines, will vary dramatically depending upon the detailed functions of each position and the level of the position. Associate or junior pen testers, mid-level pen testers, and senior or lead pen testers obviously represent sequentially advancing experience levels and responsibilities within the penetration testing umbrella. 
+
+Some positions still require only a demonstration of relevant skills and an appropriate level of cybersecurity experience and knowledge. Increasingly, though, employers are seeking candidates with a bachelor’s degree in information security or related computer science degrees. Some more advanced positions require a master’s degree.
+
+Work experience that often leads to careers in penetration testing includes software development and coding, security testing, vulnerability assessment, network engineer or administrator, security administrator.
+
+Skill requirements likely to be encountered with employers include: 
+
+Knowledge of specific computer languages, such as: 
+
+    Python
+    Powershell 
+    Golang
+    Bash
+
+Experience with network OS, Windows/ Linux/ MacOS, communications protocols, firewalls, IPS/IDS systems, virtual environments, data encryption, and mobile penetration testing of IOS/Android systems.
+
+Knowledge of common pen test and application security tools, such as:
+
+    Kali
+    Metasploit
+    Burpsuite
+    Wireshark
+    Web Inspect
+    Network Mapper (NMAP)
+    Nessus, and others
+
+Common professional certifications often sought by employers include those available from: IEEE (Institute for Electrical and Electronic Engineers) OSCP (Offensive Security Certified Professional), SANS Technology Institute, GIAC (Global Information Assurance Certification), and EC-Council.
+
+Soft skills and experience sought by employers include: excellent communication skills; self-driven, creative, and resourceful; contributions to open source projects and bug bounty programs; and familiarity with OWASP Top 10 vulnerabilities.
+
+What do penetration testers do?
+
+Generally speaking, pen testers typically perform threat modeling, security assessments, and ethical hacking of networks, systems, and web-based applications. More specifically, assurance validation involves some or all of the following tasks:
+
+    Gather and analyze Open Source Intelligence (OSINT) to find information disclosures. 
+    Provide subject matter expertise focusing on offensive security testing operations, working to test defensive mechanisms in an organization.
+    Conduct assessments on a wide variety of technologies and implementations utilizing both automated tools and manual techniques.
+    Develop scripts, tools, and methodologies to enhance testing processes.
+    Assist in the scoping of prospective engagements, leading engagements from initial stages through implementation and remediation.
+    Conduct social engineering exercises and physical penetration tests. 
+    Test wired and wireless networks for security vulnerabilities.
+    Examine assessment results to identify findings and develop a holistic analytic view of the system within the environment in which it operates.
+    Identify the root cause of technical and non-technical findings.
+    Publish an Assessment Report that documents findings and identifies potential countermeasures.
+    Track findings that are repeated across multiple assessments and communicate these findings.
+    Upon completion of assessments, communicate methods employed, findings, and analytic.
+    Provide technical support to ISOs in remediating assessment findings.
+    Provide technical support in network exploitation and evasion techniques to assist in comprehensive incident handling and forensic analysis of compromised systems.
+
+Penetration tester job description
+
+Penetration/ethical hacking job scopes vary widely based on the employer and seniority level. Looking at stated responsibilities for senior-level positions provides insight into the eventual dream job for all ethical hackers. This real-life job description gives you an idea.
+
+    Lead enterprise and system-focused network and application penetration assessments to identify security risks and vulnerabilities.
+    Perform testing on a wide scope of systems, including web applications, security controls, network infrastructure, wireless, and mobile deployments.
+    Conduct hands-on technical testing beyond the use of automated tool validation. Plan, execute, report, and lead technical debriefs on testing activities and outcomes.
+    Execute covert Red Team Cyber operations to mimic adversary tactics and work closely in a Purple Team to test exploits needed to build detections.
+    Communicate findings and remediation strategies effectively to stakeholders, including technical staff and executive leadership.
+    OSCP, GPEN or GXPN certification preferred.
+
+Information security needs become exponential more critical in organizations dealing with state secrets, such as military suppliers and national security organizations. This real-life job description was posted by a major US military equipment manufacturer for a senior-level pen test position.
+
+    Performs penetration tests and vulnerability analysis on web and other applications, network infrastructure and operating system infrastructures.
+    Briefs executive summary and findings to stakeholders to include Sr. Leadership
+    Have an understanding of how to create unique exploit code, bypass AV and mimic adversarial threats.
+    Assesses the current state of the customer’s system security by identifying all vulnerabilities and security measures. 
+    Helps customers perform analysis and mitigation of security vulnerabilities.
+    Researches and maintains proficiency in tools, techniques, countermeasures, and trends in computer network vulnerabilities, data hiding, and network security and encryption.
+    Provide support to incident response teams through capability enhancement and reporting.
+    Mentor junior and mid-level staff members by creating and teaching the latest techniques in ethical hacking and vulnerability analysis.
